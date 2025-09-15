@@ -14,8 +14,8 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    private EmployeeJDBCService service;
-    //private EmployeeService service;
+//    private EmployeeJDBCService service;
+    private EmployeeService service;
 
     @PostMapping
     public ResponseEntity<Employee> create(@RequestBody Employee employee) {
@@ -27,10 +27,11 @@ public class EmployeeController {
         return ResponseEntity.ok(service.getAllEmployees());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Employee> getById(@PathVariable Long id) {
-        return ResponseEntity.ok(service.getEmployeeById(id));
-    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Employee> getById(@PathVariable Long id) {
+//        return ResponseEntity.ok(service.getEmployeeById(id));
+//    }
+    
 
     @PutMapping("/{id}")
     public ResponseEntity<Employee> update(@PathVariable Long id, @RequestBody Employee employee) {
